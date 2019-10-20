@@ -16,6 +16,7 @@
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
         <maven-failsafe-plugin.version>2.22.0</maven-failsafe-plugin.version>
         <commons.io.version>2.6</commons.io.version>
+        <java.version>11</java.version>
     </properties>
     <dependencies>
         <!-- Apache commons Lang -->
@@ -56,7 +57,8 @@
                         <artifactId>maven-compiler-plugin</artifactId>
                         <version>${maven-compiler-plugin.version}</version>
                         <configuration>
-                            <release>11</release>
+                            <source>${java.version}</source>
+                            <target>${java.version}</target>
                         </configuration>
                     </plugin>
                     <plugin>
