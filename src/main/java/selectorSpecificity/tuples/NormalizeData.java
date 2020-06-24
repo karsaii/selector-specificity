@@ -48,11 +48,13 @@ public class NormalizeData {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        NormalizeData that = (NormalizeData) o;
-        return Objects.equals(pattern, that.pattern) &&
+        final var that = (NormalizeData) o;
+        return (
+            Objects.equals(pattern, that.pattern) &&
             Objects.equals(replacer, that.replacer) &&
             Objects.equals(normalizer, that.normalizer) &&
-            Objects.equals(validator, that.validator);
+            Objects.equals(validator, that.validator)
+        );
     }
 
     @Override
