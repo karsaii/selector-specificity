@@ -23,11 +23,13 @@ public class SpecificityData {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        SpecificityData that = (SpecificityData) o;
-        return idsCount == that.idsCount &&
-            classesCount == that.classesCount &&
-            elementsCount == that.elementsCount &&
-            validRestCount == that.validRestCount;
+        final var that = (SpecificityData) o;
+        return (
+            (Double.compare(that.idsCount, idsCount) == 0) &&
+            (Double.compare(that.classesCount, classesCount) == 0) &&
+            (Double.compare(that.elementsCount, elementsCount) == 0) &&
+            (Double.compare(that.validRestCount, validRestCount) == 0)
+        );
     }
 
     @Override

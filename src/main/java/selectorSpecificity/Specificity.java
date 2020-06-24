@@ -36,6 +36,10 @@ public interface Specificity {
             return new SelectorSpecificsData(selector, new SpecificityData(0.0, 0.0, 0.0, 1.0));
         }
 
+        if (Objects.equals(strategy, Strategy.OTHER)) {
+            return new SelectorSpecificsData(selector, new SpecificityData(0.0, 0.0, 0.0, 0.1));
+        }
+
         return isNotBlank(selector) ? AlgorithmData.CALCULATION_ALGORITHM_NORMALIZATIONS.apply(specificityData) : specificityData;
     }
 

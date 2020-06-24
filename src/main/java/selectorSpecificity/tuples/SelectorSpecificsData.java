@@ -25,9 +25,8 @@ public class SelectorSpecificsData {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        SelectorSpecificsData that = (SelectorSpecificsData) o;
-        return Objects.equals(selector, that.selector) &&
-            Objects.equals(specifics, that.specifics);
+        final var that = (SelectorSpecificsData) o;
+        return Objects.equals(selector, that.selector) && Objects.equals(specifics, that.specifics);
     }
 
     @Override
